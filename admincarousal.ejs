@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Snippet - GoSNippets</title>
+        <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+        <link rel="stylesheet" href="/Recruitment/display.css">
+        <!-- <link rel="stylesheet" href="Search.css"> -->
+        <script type='text/javascript' src=''></script>
+        <script type='text/javascript'
+            src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+        <script type='text/javascript'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+    </head>
+    <style>
+        .main {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            /* background: lightgray; */
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZX6zvwKt5tk2sFit0Y8xjsloLhMgVssqi1aNJ_YMZg8KU7s6UsvKX9vrGhymkGRywz0o&usqp=CAU");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .chartMenu {
+            width: 100vw;
+            height: 40px;
+            background: #1A1A1A;
+            color: rgba(54, 162, 235, 1);
+        }
+
+        .chartMenu p {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .chartCard {
+            width: 100vw;
+            height: calc(100vh - 40px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chartBox {
+            width: 600px;
+            margin: 0px 10px;
+            padding: 20px;
+            border-radius: 20px;
+            /* border: solid 3px rgba(54, 162, 235, 1); */
+            border: 7px solid grey;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+        }
+    </style>
+
+
+    <body class='snippet-body'>
+
+        <form action="/searchData">
+            <input type="search" name="Student" id="Student" placeholder="Enter Student Name">
+            <input type="search" name="Company" id="Company" placeholder="Enter Company Name">
+            <input type="submit" value="search" class="btn btn-outline-primary">
+        </form>
+        <section class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 addData">
+                        <a href="/add" class="btn btn-warning">Add Data</a>
+                    </div>
+
+                    <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                            data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button"
+                            data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel"
+                            style="width: 100dvw;">
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active node">
+                                    <div class="row">
+                                        <% for(let i=0;i<=8;i++){ %>
+                                            <div class="col-md-4 mb-3 centerElement">
+                                                <div class="card custom">
+                                                    <div class="image">
+                                                        <img class="img-fluid" alt="100%x280"
+                                                            src="/images/<%-students[i].Photo  %>">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="other1">
+                                                            <h4>Students:</h4>
+                                                            <h4 class="card-title second"><%- students[i].Student %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Company :</h4>
+                                                            <h4 class="card-text second"><%- students[i].Company %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Package :</h4>
+                                                            <h4 class="card-text second"><%- students[i].Package %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Linkedin :</h4>
+                                                            <h4 class="card-text second"><a
+                                                                    href="<%- students[i].linkdein %>"><%-
+                                                                        students[i].Student %></a>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="inlineCss">
+                                                            <a href="delete-data?Student=<%- students[i].Student %>"
+                                                                class="btn btn-outline-warning mt-3 popup">Delete
+                                                                Data</a>
+                                                            <a href="updateData?Student=<%- students[i].Student %>"
+                                                                class="card-text btn btn-outline-warning mt-3 popup">Update
+                                                                Data</a>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <% for(let i=9;i<=17;i++){ %>
+                                            <div class="col-md-4 mb-3 centerElement">
+                                                <div class="card custom">
+                                                    <div class="image">
+                                                        <img class="img-fluid" alt="100%x280"
+                                                            src="/images/<%-students[i].Photo  %>">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="other1">
+                                                            <h4>Students:</h4>
+                                                            <h4 class="card-title second"><%- students[i].Student %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Company :</h4>
+                                                            <h4 class="card-text second"><%- students[i].Company %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Package :</h4>
+                                                            <h4 class="card-text second"><%- students[i].Package %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Linkedin :</h4>
+                                                            <h4 class="card-text second"><a
+                                                                    href="<%- students[i].linkdein %>"><%-
+                                                                        students[i].Student %></a>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="inlineCss">
+                                                            <a href="delete-data?Student=<%- students[i].Student %>"
+                                                                class="btn btn-outline-warning mt-3 popup">Delete
+                                                                Data</a>
+                                                            <a href="updateData?Student=<%- students[i].Student %>"
+                                                                class="card-text btn btn-outline-warning mt-3 popup">Update
+                                                                Data</a>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <% for(let i=24;i<33;i++){ %>
+                                            <div class="col-md-4 mb-3 centerElement">
+                                                <div class="card custom">
+                                                    <div class="image">
+                                                        <img class="img-fluid" alt="100%x280"
+                                                            src="/images/<%-students[i].Photo  %>">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="other1">
+                                                            <h4>Students:</h4>
+                                                            <h4 class="card-title second"><%- students[i].Student %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Company :</h4>
+                                                            <h4 class="card-text second"><%- students[i].Company %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Package :</h4>
+                                                            <h4 class="card-text second"><%- students[i].Package %>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="other1">
+                                                            <h4>Linkedin :</h4>
+                                                            <h4 class="card-text second"><a
+                                                                    href="<%- students[i].linkdein %>"><%-
+                                                                        students[i].Student %></a>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="inlineCss">
+                                                            <a href="delete-data?Student=<%- students[i].Student %>"
+                                                                class="btn btn-outline-warning mt-3 popup">Delete
+                                                                Data</a>
+                                                            <a href="updateData?Student=<%- students[i].Student %>"
+                                                                class="card-text btn btn-outline-warning mt-3 popup">Update
+                                                                Data</a>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="animation">
+            <h3 class="animate-charcter"> Graphical Representation</h3>
+        </div>
+        <div class="main" style="margin: 50px 0px;">
+            <div class="chartBox">
+                <canvas id="firstLineChart"></canvas>
+            </div>
+            <div class="chartBox">
+                <canvas id="secondLineChart"></canvas>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+
+
+
+            //setup
+            const data = {
+                labels: ["4-6lakhs", "6-8lakhs", "8-10lakhs", "10-12lakhs", "12 and more"],
+                datasets: [{
+                    label: "Number of Students",
+                    data: [67, 18, 13, 2, 3],
+                    backgroundColor: [
+                        "rgba(255, 26, 104, 0.2)",
+                        "rgba(54, 162, 235, 0.2)",
+                        "rgba(255, 206, 86, 0.2)",
+                        "rgba(75, 192, 192, 0.2)",
+                        "rgba(153, 102, 255, 0.2)",
+                        "rgba(255, 159, 64, 0.2)",
+                        "rgba(0, 0, 0, 0.2)",
+                    ],
+                    borderColor: [
+                        "rgba(255, 26, 104, 1)",
+                        "rgba(54, 162, 235, 1)",
+                        "rgba(255, 206, 86, 1)",
+                        "rgba(75, 192, 192, 1)",
+                        "rgba(153, 102, 255, 1)",
+                        "rgba(255, 159, 64, 1)",
+                        "rgba(0, 0, 0, 1)",
+                    ],
+                    borderWidth: 1
+                }]
+            }
+            //config
+            const config = {
+                type: 'bar',
+                data,
+                options: {
+                    animations: {
+                        borderWidth: {
+                            duration: 1000,
+                            // easing: 'easeInElastic',
+                            from: 3,
+                            to: 1,
+                            loop: true
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+
+
+                        }
+                    }
+                }
+            }
+            //render bar chart
+            const myChart = new Chart(document.getElementById('firstLineChart'), config);
+            //set up line chart 2
+
+            const dataSecondLine = {
+                labels: ['Infosys Pvt. Ltd', 'Capgemini Pune', 'TCS Ltd', 'Adani Group', 'Adobe Company', 'Tech Mahindra Ltd.', 'Persistent System'],
+
+                datasets: [{
+                    label: 'Number of Students',
+                    data: [18, 15, 5, 4, 8, 6, 10],
+                    backgroundColor: [
+                        "rgba(255, 26, 104, 0.2)",
+                        "rgba(54, 162, 235, 0.2)",
+                        "rgba(255, 206, 86, 0.2)",
+                        "rgba(75, 192, 192, 0.2)",
+                        "rgba(153, 102, 255, 0.2)",
+                        "rgba(255, 159, 64, 0.2)",
+                        "rgba(0, 0, 0, 0.2)",
+                    ],
+                    borderColor: [
+                        "rgba(255, 26, 104, 1)",
+                        "rgba(54, 162, 235, 1)",
+                        "rgba(255, 206, 86, 1)",
+                        "rgba(75, 192, 192, 1)",
+                        "rgba(153, 102, 255, 1)",
+                        "rgba(255, 159, 64, 1)",
+                        "rgba(0, 0, 0, 1)",
+                    ],
+                    borderWidth: 1
+                }]
+            }
+            //config lineChart
+            //
+            const configSecondLine = {
+                type: 'line',
+                data: dataSecondLine,
+                options: {
+                    animations: {
+                        borderWidth: {
+                            duration: 1000,
+                            // easing: 'easeInElastic',
+                            from: 3,
+                            to: 1,
+                            loop: true
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            }
+
+            //render line chart
+            const lineChart = new Chart(document.getElementById('secondLineChart'), configSecondLine);
+        </script>
+        <script type='text/javascript'></script>
+        <script>
+            const btnClicked = document.querySelectorAll('.popup');
+            btnClicked.addEventListener('click', () => {
+                alert("Reconfirmation do u want to perform the task")
+            })
+        </script>
+    </body>
+
+</html>

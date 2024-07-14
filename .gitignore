@@ -1,3 +1,9 @@
+# Ignore the node modules
+node_modules/
+
+# Ignore the .vscode folder
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

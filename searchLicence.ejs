@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/display.css" />
+  <!-- <link rel="stylesheet" href="Search.css"> -->
+  <script type="text/javascript" src=""></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script type="text/javascript"
+    src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="C:\Users\bhakt\OneDrive\Documents\Web\fontawesome-free-6.4.0-web\css\all.min.css"/>
+    <link rel="stylesheet" href="C:\Users\bhakt\OneDrive\Documents\Web\fontawesome-free-6.4.0-web\css\fontawesome.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> -->
+
+<!-- Font Awesome Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  .nav-link:hover {
+    color: white !important;
+  }
+
+  .nav-link {
+    font-size: medium;
+    text-justify: auto;
+  }
+
+  .header {
+    /* padding: 10px; */
+    background-color: #07203a;
+
+    color: white;
+    /* height: 10px; */
+    /* width: 100%; */
+  }
+
+  .bhakti {
+    height: 80px;
+    padding-left: 80px;
+  }
+
+  .main {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    /* background: #000; */
+  }
+
+  .container {
+    margin: 5px 0px;
+    padding-left: 0px;
+  }
+
+  /* body {
+    
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZX6zvwKt5tk2sFit0Y8xjsloLhMgVssqi1aNJ_YMZg8KU7s6UsvKX9vrGhymkGRywz0o&usqp=CAU");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    } */
+  body {
+    padding-top: 100px;
+
+
+  }
+
+  td {
+    padding: 5px 5px;
+    font-size: 1.2rem;
+
+    /* border: 2px solid #fff; */
+    /* text-shadow : 1px 0px 0px #333 ; */
+
+  }
+
+  th {
+    padding: 5px 20px;
+    background: #333;
+    margin: 0px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    /* border: 2px solid #fff; */
+    color: #fff;
+    text-shadow: 2px 2px 2px black
+      /* padding: 0px 10px; */
+
+
+  }
+
+  table {
+    padding: 0px;
+    border: 2px solid lavenderblush;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* box-shadow: 3px 3px red, -1em 0 .4em olive; */
+
+  }
+
+  tr:nth-child(odd) {
+
+    background: #e4e3e3;
+  }
+
+  tr:nth-child(even) {
+
+    background: #fff;
+  }
+
+  .stateCode {
+    padding-left: 50px;
+  }
+
+  tr {
+    width: 90%;
+    transition: 500ms;
+  }
+
+  tr:hover {
+    transform: scale(1.1);
+    transition: 500ms;
+
+
+  }
+
+  tr:hover .stateCode {
+    text-align: center;
+  }
+
+  .chartMenu {
+    width: 100vw;
+    height: 40px;
+    background: #fff;
+    color: rgba(54, 162, 235, 1);
+  }
+
+  .row {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .col-12 {
+    padding-left: 0px;
+  }
+
+  .chartMenu p {
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .chartCard {
+    width: 100vw;
+    height: calc(100vh - 40px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chartBox {
+    width: 600px;
+    margin: 0px 10px;
+    padding: 20px;
+    border-radius: 20px;
+    /* border: solid 3px rgba(54, 162, 235, 1); */
+    border: 7px solid grey;
+
+  }
+  .contact{
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    
+  }
+  i{
+    font-size: 1.5rem;
+    filter: contrast(100%);
+    padding: 0px 10px;
+  }
+  /* social media hovering effect */
+  /* .rohan{
+    filter: grayscale(100%);
+    transition: 500ms;
+  }
+  .rohan:nth-child(0){
+    color: orange;
+  }
+  .rohan:hover{
+    filter: grayscale(0%);
+
+  }  */ 
+</style>
+
+<body>
+  <!-- <div class="bhakti"> -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark header bhakti">
+
+    <!-- <img src="lily.jpg" alt=""> -->
+
+    <a href="#" class="navbar-brand"><b>ANPR</b></a>
+
+    </button>
+    <div class="collpase navbar-collapse" id="mymenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a href="/index.html" class="nav-link">Home </a></li>
+
+        <li class="nav-item"><a href="/loginPage.html" class="nav-link">Admin</a></li>
+
+    </div>
+
+    </ul>
+    </div>
+    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+        <span class="navbar-toggler-icon"></span>
+    </button> -->
+  </nav>
+  <!-- </div> -->
+  <form action="/search">
+    <input type="search" name="Licence" id="Student" placeholder="Licence" />
+    <input type="search" name="StateCode" id="Company" placeholder="StateCode" />
+    <input type="search" name="Tag" id="Tag" placeholder="Tag" />
+    <!-- <input type="submit" value="search" class="btn btn-outline-primary" /> -->
+    <button type="submit">
+      <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+      <lord-icon src="https://cdn.lordicon.com/osbjlbsb.json" trigger="hover"
+        colors="outline:#121331,secondary:#b26836,secondary2:#4bb3fd,quaternary:#ebe6ef" style="width:50px;height:40px">
+      </lord-icon>
+    </button>
+    <!-- <button type="submit" class="ash1"><img
+      src="https://www.citypng.com/public/uploads/preview/download-blue-search-icon-button-png-11640084027s0fkuhz2lb.png"
+      alt=""></button> -->
+
+  </form>
+
+  <section class="pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 addData" style="visibility: hidden">
+          <a href="/add" class="btn btn-warning">Add Data </a>
+        </div>
+
+        <div class="col-6 text-right">
+          <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left"></i>
+          </a>
+          <a class="btn btn-primary mb-3" href="#carouselExampleIndicators2" role="button" data-slide="next">
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="col-12">
+          <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="width: 100dvw">
+            <div class="carousel-inner">
+              <div class="carousel-item active node">
+                <div class="row">
+                  <table>
+                    <tr>
+                      <th>StateCode</th>
+                      <th class="lincence">Licence</th>
+                      <th>State</th>
+                      <th>Date</th>
+                      <th>Day</th>
+                      <th>Month</th>
+                      <th>Time</th>
+                      <th>Tag</th>
+                      <th>Actions</th>
+                    </tr>
+
+                    <% for(let i=0;i<=4;i++){ %>
+                      <tr>
+                        <td class="stateCode"><%- anpr[i].StateCode %></td>
+                        <td class="lincence"><%- anpr[i].Licence%></td>
+                        <td><%- anpr[i].State%></td>
+                        <td><%- anpr[i].Date %></td>
+                        <td><%- anpr[i].Day %></td>
+                        <td><%- anpr[i].Month%></td>
+                        <td><%- anpr[i].Time %></td>
+                        <td><%- anpr[i].Tag %></td>
+                        <td>
+                          <a href="/delete-student?Licence=<%- anpr[i].Licence%>"
+                            class="btn btn-outline-dark">Delete</a>
+                          <a href="/update-student?Licence=<%- anpr[i].Licence%>"
+                            class="btn btn-outline-dark">Update</a>
+                        </td>
+                      </tr>
+                      <% } %>
+                  </table>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <table>
+                    <tr>
+                      <th>StateCode</th>
+                      <th class="lincence">Licence</th>
+                      <th>State</th>
+                      <th>Date</th>
+                      <th>Day</th>
+                      <th>Month</th>
+                      <th>Time</th>
+                      <th>Tag</th>
+                      <th>Actions</th>
+
+                    </tr>
+
+                    <% for(let i=0;i<=4;i++){ %>
+                      <tr>
+                        <td class="stateCode"><%- anpr[i].StateCode %></td>
+                        <td class="lincence"><%- anpr[i].Licence%></td>
+                        <td><%- anpr[i].State%></td>
+                        <td><%- anpr[i].Date %></td>
+                        <td><%- anpr[i].Day %></td>
+                        <td><%- anpr[i].Month%></td>
+                        <td><%- anpr[i].Time %></td>
+                        <td><%- anpr[i].Tag %></td>
+                        <td>
+                          <a href="/delete-student?Licence=<%- anpr[i].Licence%>"
+                            class="btn btn-outline-dark">Delete</a>
+                          <a href="/update-student?Licence=<%- anpr[i].Licence%>"
+                            class="btn btn-outline-dark">Update</a>
+                        </td>
+                      </tr>
+                      <% } %>
+                  </table>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <table>
+                    <tr>
+                      <th>StateCode</th>
+                      <th class="lincence">Licence</th>
+                      <th>State</th>
+                      <th>Date</th>
+                      <th>Day</th>
+                      <th>Month</th>
+                      <th>Time</th>
+                      <th>Tag</th>
+                      <th>Actions</th>
+                    </tr>
+
+                    <% for(let i=0;i<anpr.length;i++){ %>
+                      <tr>
+                        <td class="stateCode"><%- anpr[i].StateCode %></td>
+                        <td class="lincence"><%- anpr[i].Licence%></td>
+                        <td><%- anpr[i].State%></td>
+                        <td><%- anpr[i].Date %></td>
+                        <td><%- anpr[i].Day %></td>
+                        <td><%- anpr[i].Month%></td>
+                        <td><%- anpr[i].Time %></td>
+                        <td><%- anpr[i].Tag %></td>
+                        <td>
+                          <a href="/delete-student?Licence=<%- anpr[i].Licence%>"
+                            class="btn btn-outline-dark">Delete</a>
+                          <a href="/update-student?Licence=<%- anpr[i].Licence%>"
+                            class="btn btn-outline-dark">Update</a>
+                        </td>
+                      </tr>
+                      <% } %>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <div class="animation">
+    <h3 class="animate-charcter"> Graphical Representation</h3>
+  </div>
+  <div class="main" style="margin: 50px 0px;">
+    <div class="chartBox">
+      <canvas id="firstLineChart"></canvas>
+    </div>
+    <div class="chartBox">
+      <canvas id="secondLineChart"></canvas>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+
+
+
+    //setup
+    const data = {
+      labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      datasets: [{
+        label: "Number of Vechiles",
+        data: [28, 12, 8, 4, 3, 30, 45],
+        backgroundColor: [
+          "rgba(255, 26, 104, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+          "rgba(0, 0, 0, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 26, 104, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+          "rgba(0, 0, 0, 1)",
+        ],
+        borderWidth: 1
+      }]
+    }
+    //config
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        animations: {
+          borderWidth: {
+            duration: 1000,
+            // easing: 'easeInElastic',
+            from: 3,
+            to: 1,
+            loop: true
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+
+
+          }
+        }
+      }
+    }
+    //render bar chart
+    const myChart = new Chart(document.getElementById('firstLineChart'), config);
+    //set up line chart 2
+
+    const dataSecondLine = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+
+      datasets: [{
+        label: 'Number of Vehicles',
+        data: [18, 15, 5, 4, 8, 6, 10],
+        backgroundColor: [
+          "rgba(255, 26, 104, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+          "rgba(0, 0, 0, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 26, 104, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+          "rgba(0, 0, 0, 1)",
+        ],
+        borderWidth: 1
+      }]
+    }
+    //config lineChart
+    //
+    const configSecondLine = {
+      type: 'bar',
+      data: dataSecondLine,
+      options: {
+        animations: {
+          borderWidth: {
+            duration: 1000,
+            // easing: 'easeInElastic',
+            from: 3,
+            to: 1,
+            loop: true
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    }
+
+    //render line chart
+    const lineChart = new Chart(document.getElementById('secondLineChart'), configSecondLine);
+  </script>
+  <script type='text/javascript'></script>
+
+  <!-- //Useless Part// -->
+  <!-- <div class="footer1" style="margin-top: 50px;">              -->
+  <footer class="text-center text-lg-start text-muted" style="background-color:#07203a; color:#b0c6de; width: 100vwx;">
+    <!-- Section: Social media -->
+    <section class="pt-3 contact">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block" style="visibility: hidden;" >
+        
+        <h4  >Get connected with us on Social Networks</h4>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="https://www.facebook.com/official.kitcoek/" class="me-4 link-secondary">
+          <i class="fab fa-facebook-f fa-bounce rohan" style="color: blue;"></i>
+        </a>
+        <a href="https://twitter.com/officialkitcoek" class="me-4 link-secondary">
+          <i class="fab fa-twitter fa-bounce rohan" style="color: rgb(118, 118, 205);"></i>
+        </a>
+        <!-- <a href="" class="me-4 link-secondary">
+                  <i class="fab fa-google"></i>
+                </a> -->
+        <a href="https://www.instagram.com/kitcoek.official/" class="me-4 link-secondary">
+          <i class="fab fa-instagram fa-bounce rohan" style="color: rgb(206, 64, 64);"></i>
+        </a>
+        <!-- <a href="" class="me-4 link-secondary">
+                  <i class="fab fa-linkedin"></i>
+                </a> -->
+        <!-- <a href="" class="me-4 link-secondary">
+                  <i class="fab fa-github"></i>
+                </a> -->
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="a">
+      <div>
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3 text-secondary"></i>ANPR
+            </h6>
+            <p>
+              Automatic Number Plate Recognition (ANPR) has objective is to design an efficient automatic authorized
+              vehicle identification system by using the vehicle number plate.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4"> Helpful Links</h6>
+            <p>
+              <a href="/camera.html" class="text-reset">Camera Setup for ANPR</a>
+            </p>
+            <!-- <p>
+                      <a href="#!" class="text-reset">License Plate Datasets</a>
+                    </p> -->
+            <p>
+              <a href="/anpr.html" class="text-reset">ANPR Research</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="/help.html" class="text-reset">Help Center</a>
+            </p>
+            <!-- <p>
+                      <a href="#!" class="text-reset">Terms & Privacy</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">Orders</a>
+                    </p> -->
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-3 " style="text-align: start;">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3 text-secondary"></i>R.S. No. 199B/1-3, Gokul - Shirgoan, Kolhapur - 416 234,
+              Maharashtra State, INDIA</p>
+            <p>
+              <i class="fas fa-envelope me-3 text-secondary"></i>
+              info@kitcoek.in
+            </p>
+            <p><i class="fas fa-phone me-3 text-secondary"></i>7030861199</p>
+
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.025);">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold" href="#">Sentinel Squad</a>
+    </div>
+
+  </footer>
+  <script src="	https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <!-- <script src="C:\Users\bhakt\OneDrive\Documents\Web\bootstrap\Bootstrap\js\bootstrap.bundle.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- <script src="C:\Users\bhakt\OneDrive\Documents\Bootstrap\js\bootstrap.min.js"></script> -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+</body>
+
+</html>

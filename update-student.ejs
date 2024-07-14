@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      /* background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        url("https://thumbs.dreamstime.com/b/landscape-nature-view-background-view-window-landscape-nature-view-background-view-window-wonderful-landscape-121459679.jpg")
+      ); */
+      /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://thumbs.dreamstime.com/b/landscape-nature-view-background-view-window-landscape-nature-view-background-view-window-wonderful-landscape-121459679.jpg"); */
+
+      /* background-image: url("/background.jpg"); */
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* height: 100vh; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("webback2.gif");
+    }
+    .submit-button {
+      /* Normal state styles */
+      background-color: #0d74f5; /* Set the desired background color */
+      color: #ffffff; /* Set the desired text color */
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      /* Hover state styles */
+      background-color: #141d48; /* Set the desired background color for hover */
+      /* You can adjust the styles as per your preference */
+      color: #ffff;
+    }
+    /* .btn {
+      cursor: pointer;
+      border: none;
+      background: none;
+      width: 60px;
+      height: 40px;
+    }
+
+    input.btn[type="submit"]:hover {
+      border: 1px solid black;
+     
+    } */
+
+    .demo {
+      background-color: #0d74f5;
+      padding: 30px 30px;
+      border-radius: 20px;
+      opacity: 0, 8;
+      border: 2.5px solid #ffff;
+      width: 400px;
+      height: 620px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      color: #fff;
+    }
+
+    .demo input {
+      font-size: 10px;
+      width: 80%;
+      padding: 10px;
+      border: 0;
+      outline: none;
+      border-radius: 10px;
+    }
+
+    .demo p {
+      align-items: first baseline;
+      font-size: 20px;
+      margin: 15px 0;
+    }
+  </style>
+
+  <body>
+    <center>
+      <div class="demo">
+        <h1 style="font-family: sans-serif; color: #ffff">
+          <font size="7px">Update</font>
+        </h1>
+
+        <form action="/update-student" method="post" style="font-size: 20px">
+          <input
+            type="text"
+            name="Licence"
+            value="<%= anpr[0].Licence %>"
+            placeholder="Enter Licence"
+            style="font-size: 15px"
+          /><br /><br />
+          <input
+            type="text"
+            name="StateCode"
+            value="<%= anpr[0].StateCode %>"
+            placeholder="Enter StateCode"
+            style="font-size: 15px"
+          /><br /><br />
+          <input
+            type="text"
+            name="State"
+            value="<%= anpr[0].State %>"
+            placeholder="Enter State"
+            style="font-size: 15px"
+          /><br /><br />
+          <input
+            type="date"
+            name="Date"
+            value="<%= anpr[0].Date %>"
+            placeholder="Enter Date"
+            style="font-size: 15px"
+          /><br /><br />
+          <input
+            type="text"
+            name="Day"
+            value="<%= anpr[0].Day %>"
+            placeholder="Enter Day"
+            style="font-size: 15px"
+          /><br /><br />
+          <input
+            type="text"
+            name="Month"
+            value="<%= anpr[0].Month %>"
+            placeholder="Enter Month"
+            style="font-size: 15px"
+          /><br /><br />
+          <input
+            type="text"
+            name="Time"
+            value="<%= anpr[0].Time %>"
+            placeholder="Enter Time"
+            style="font-size: 15px"
+          /><br /><br />
+          <input
+            type="text"
+            name="Tag"
+            value="<%= anpr[0].Tag %>"
+            placeholder="Enter Tag"
+            style="font-size: 15px"
+          /><br />
+          <br />
+          <input
+            type="submit"
+            value="Submit"
+            class="submit-button"
+            style="
+              text-decoration: none;
+              width: 150px;
+              font-size: 20px;
+              font-weight: bold !important;
+              border-radius: 10px;
+              border: 2px solid #000000;
+              color: #ffff;
+              padding: 10px 10px;
+            "
+          />
+        </form>
+      </div>
+    </center>
+  </body>
+</html>

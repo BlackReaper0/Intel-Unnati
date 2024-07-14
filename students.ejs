@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumberPlate List</title>
+</head>
+<body>
+    <h1>NumberPlate List</h1>
+
+    <table border="1" width="100%">
+         <tr>
+            <th>Licence</th>
+            <th>StateCode</th>
+            <th>State</th>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Month</th>
+            <th>Time</th>
+            <th>Tag</th>
+            <th>Actions</th>
+        </tr>
+        
+   <% if(anpr.length > 0 ){ %>
+       <% for(var i=0;i<anpr.length;i++){ %>
+         
+        <tr>
+           
+            <td><%- anpr[i].Licence%></td>
+            <td><%- anpr[i].StateCode %></td>
+            <td><%- anpr[i].State%></td>
+            <td><%- anpr[i].Date %></td>
+            <td><%- anpr[i].Day %></td>
+            <td><%- anpr[i].Month%></td>
+            <td><%- anpr[i].Time %></td>
+            <td><%- anpr[i].Tag %></td>
+            <td>
+                <a href="/delete-student?Licence=<%- anpr[i].Licence%>">Delete</a>
+                <a href="/update-student?Licence=<%- anpr[i].Licence%>">Update</a>
+            </td>
+        </tr>
+
+    <% } %>
+   <% }else{ %> 
+     <h1>Students Data not found.</h1>
+   <% } %>
+    </table>
+</body>
+</html> 

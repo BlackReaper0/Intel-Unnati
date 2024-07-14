@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <style>
+    
+        .nav-link:hover{
+            color: white !important;
+        }
+        .nav-link{
+            font-size: medium;
+            text-justify: auto;
+        }
+        .header{
+            padding: 10px;
+            background-color:#07203a ;
+      
+            color: white;
+        }
+        .footer{
+    
+            padding: 0px;
+            /* padding-top: 30px; */
+            /* color: #FFFFFF; */
+            width: 100%;
+        }
+        .bhakti{
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-top: 30px;
+        }
+    .main {
+      display: flex;
+      justify-content: space-around;
+    }
+  
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+      /* background: #000; */
+    }
+  
+    .container {
+      margin: 5px 0px;
+      padding-left: 0px;
+    }
+  
+    /* body {
+      
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZX6zvwKt5tk2sFit0Y8xjsloLhMgVssqi1aNJ_YMZg8KU7s6UsvKX9vrGhymkGRywz0o&usqp=CAU");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      } */
+      body{
+        height: 100vh;
+        /* padding-left: 700px;
+        padding-top: 330px; */
+      }
+  
+  
+    td {
+      padding: 5px 20px;
+      /* border: 2px solid #fff; */
+      /* text-shadow : 1px 0px 0px #333 ; */
+  
+    }
+  
+    th {
+      padding: 0px 20px;
+      background: #333;
+      margin: 0px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      /* border: 2px solid #fff; */
+      color: #fff;
+      text-shadow: 2px 2px 2px black
+        /* padding: 0px 10px; */
+  
+  
+    }
+  
+    table {
+     
+      /* padding: 0px; */
+      border: 2px solid lavenderblush;
+      justify-content: center
+      ;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      /* box-shadow: 3px 3px red, -1em 0 .4em olive; */
+      /* top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+    }
+  
+    tr:nth-child(odd) {
+  
+      background: #e4e3e3;
+    }
+    tr:nth-child(even) {
+  
+      background: #fff;
+    }
+    
+    tr {
+      width: 100%;
+    }
+  
+    .chartMenu {
+      width: 100vw;
+      height: 40px;
+      background: #fff;
+      color: rgba(54, 162, 235, 1);
+    }
+  
+    .row {
+      padding: 0px;
+      margin: 0px;
+    }
+  
+    .col-12 {
+      padding-left: 0px;
+    }
+  
+    .chartMenu p {
+      padding: 10px;
+      font-size: 20px;
+    }
+  
+    .chartCard {
+      width: 100vw;
+      height: calc(100vh - 40px);
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .chartBox {
+      width: 600px;
+      margin: 0px 10px;
+      padding: 20px;
+      border-radius: 20px;
+      /* border: solid 3px rgba(54, 162, 235, 1); */
+      border: 7px solid grey;
+      
+    }
+    i{
+    font-size: 1.2rem;
+    filter: contrast(100%);
+    padding: 0px 10px;
+  }
+  .contact{
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    
+  }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark header">
+        
+      <!-- <img src="lily.jpg" alt=""> -->
+
+      <a href="#" class="navbar-brand"><b>ANPR</b></a>
+
+      </button> 
+      <div class="collpase navbar-collapse" id="mymenu">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a href="/index.html" class="nav-link">Home </a></li>
+
+                   <li class="nav-item"><a href="/loginpage.html" class="nav-link">Admin</a></li>
+                    
+              </div>
+              
+          </ul>
+      </div>
+      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+          <span class="navbar-toggler-icon"></span>
+      </button> -->
+  </nav> 
+  <div class="bhakti">
+    <table width="100%" height="100px">
+      <tr height="50px">
+        <th>Licence</th>
+        <th>StateCode</th>
+        <th>State</th>
+        <th>Date</th>
+        <th>Day</th>
+        <th>Month</th>
+        <th>Time</th>
+        <th>Tag</th>
+      </tr>
+
+      <% for(let i=0;i<anpr.length;i++){ %>
+      <tr>
+        <td><%- anpr[i].Licence%></td>
+        <td><%- anpr[i].StateCode %></td>
+        <td><%- anpr[i].State%></td>
+        <td><%- anpr[i].Date %></td>
+        <td><%- anpr[i].Day %></td>
+        <td><%- anpr[i].Month%></td>
+        <td><%- anpr[i].Time %></td>
+        <td><%- anpr[i].Tag %></td>
+      </tr>
+      <% } %>
+    </table>
+  </div>
+  <footer class="text-center text-lg-start text-muted" style="background-color:#07203a; color:#b0c6de; width: 100vwx; margin-top: 40px;">
+    <!-- Section: Social media -->
+    <section class="pt-3 contact">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block" style="visibility: hidden;" >
+        
+        <h4  >Get connected with us on Social Networks</h4>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="https://www.facebook.com/official.kitcoek/" class="me-2 link-secondary" style="text-decoration: none;">
+          <i class="fab fa-facebook-f fa-bounce rohan" style="color: rgb(58, 58, 218); font-size: 1.4rem;padding-right: 20px;"></i>
+          <!-- <i class="fa-brands fa-facebook rohan"></i> -->
+        </a>
+        <a href="https://twitter.com/officialkitcoek" class="me-2 link-secondary" style="text-decoration: none;">
+          <i class="fab fa-twitter fa-bounce rohan" style="color: rgb(118, 118, 205); font-size: 1.4rem;padding-right: 20px;"></i>
+        </a>
+        <!-- <a href="" class="me-2 link-secondary">
+                  <i class="fab fa-google"></i>
+                </a> -->
+        <a href="https://www.instagram.com/kitcoek.official/" class="me-2 link-secondary" style="text-decoration: none;">
+          <i class="fab fa-instagram fa-bounce rohan" style="color: rgb(206, 64, 64); font-size: 1.4rem;padding-right: 20px;"></i>
+        </a>
+        <!-- <a href="" class="me-4 link-secondary">
+                  <i class="fab fa-linkedin"></i>
+                </a> -->
+        <!-- <a href="" class="me-4 link-secondary">
+                  <i class="fab fa-github"></i>
+                </a> -->
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="a">
+      <div>
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3 text-secondary"></i>ANPR
+            </h6>
+            <p>
+              Automatic Number Plate Recognition (ANPR) has objective is to design an efficient automatic authorized
+              vehicle identification system by using the vehicle number plate.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4"> Helpful Links</h6>
+            <p>
+              <a href="/camera.html" class="text-reset">Camera Setup for ANPR</a>
+            </p>
+            <!-- <p>
+                      <a href="#!" class="text-reset">License Plate Datasets</a>
+                    </p> -->
+            <p>
+              <a href="/anpr.html" class="text-reset">ANPR Research</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="/help.html" class="text-reset">Help Center</a>
+            </p>
+            <!-- <p>
+                      <a href="#!" class="text-reset">Terms & Privacy</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">Orders</a>
+                    </p> -->
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-3 " style="text-align: start;">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3 text-secondary"></i>R.S. No. 199B/1-3, Gokul - Shirgoan, Kolhapur - 416 234,
+              Maharashtra State, INDIA</p>
+            <p>
+              <i class="fas fa-envelope me-3 text-secondary"></i>
+              info@kitcoek.in
+            </p>
+            <p><i class="fas fa-phone me-3 text-secondary"></i>7030861199</p>
+
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.025);">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold" href="#">Sentinel Squad</a>
+    </div>
+
+  </footer>
+    <!-- <script src="	https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!-- <script src="C:\Users\bhakt\OneDrive\Documents\Web\bootstrap\Bootstrap\js\bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="C:\Users\bhakt\OneDrive\Documents\Bootstrap\js\bootstrap.min.js"></script> --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </body>
+</html>

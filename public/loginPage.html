@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Classic Login Form Example</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Assistant:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="logo"><img src="logo.jpg" height="80px," width="260px" /></div>
+    <!-- partial:index.partial.html -->
+    <section class="login" id="login">
+      <div class="head">
+        <h1 class="company">ADMIN LOGIN</h1>
+      </div>
+      <div class="form">
+        <form>
+          <input
+            type="text"
+            placeholder="Username"
+            class="text"
+            id="username"
+            required
+          /><br />
+          <input
+            type="password"
+            placeholder="••••••••••••••"
+            class="password"
+            id="password"
+          /><br />
+          <a href="#" class="btn-login" id="do-login">Login</a>
+        </form>
+      </div>
+    </section>
+    <!-- partial -->
+    <!-- <script src="./script.js"></script> -->
+    <script>
+      var btnLogin = document.getElementById("do-login");
+      var idLogin = document.getElementById("login");
+      var usernameInput = document.getElementById("username");
+      var passwordInput = document.getElementById("password");
+      btnLogin.onclick = function () {
+        idLogin.innerHTML =
+          "<p>We're happy to see you again, </p><h1>" +
+          username.value +
+          "</h1>";
+      };
+      const password = "admin";
+      const username = "Admin";
+      btnLogin.addEventListener("click", () => {
+        if (
+          usernameInput.value === username &&
+          passwordInput.value === password
+        ) {
+          console.log("Ur Welcome");
+          alert("Welcome");
+          window.location = `http://localhost:5500/searchLicence`;
+        } else {
+          console.error("Sorry");
+          alert("Sorry incorrect Username or Password");
+          window.location = `http://localhost:5500/loginPage.html`;
+        }
+      });
+    </script>
+  </body>
+</html>
