@@ -4,6 +4,16 @@ node_modules/
 # Ignore the .vscode folder
 .vscode/
 
+# Ignore the python env folder
+intel/
+
+# Files to ignore for Backend
+/backend/video/
+/backend/content_rest/wandb/
+/backend/Images_check/
+/backend/sort/
+/backend/model1/
+/backend/content_rest/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
