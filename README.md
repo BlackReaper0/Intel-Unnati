@@ -134,5 +134,5 @@ This project aims to analyze vehicle movement and parking within a college campu
    ```
 2. Start the Node.js server:
    ```bash
-   npm start
+   nodemon .\index.js
    ```
